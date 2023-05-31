@@ -48,8 +48,17 @@ public class HomeController : Controller
 
     //Register post
      [HttpPost]
-    public IActionResult RegisterForm(IFormCollection form){
+    public IActionResult RegisterForm(UserModel user){
+        Console.WriteLine(user.login);
+        Console.WriteLine(user.password);
 
+        if(user.login!=null&&user.password!=null){
+            using(var db=new DatabaseContext()){
+                db.Add(user);
+                db.SaveChanges();
+            }
+            Console.WriteLine("Saved to db");
+        }
         return RedirectToAction("Login");
     }
 
