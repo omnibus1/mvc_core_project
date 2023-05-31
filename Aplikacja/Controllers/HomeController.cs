@@ -48,6 +48,8 @@ public class HomeController : Controller
 
     //Logout ling - update session, redirect to login page
     public IActionResult Logout(){
+        HttpContext.Session.SetString("logged_in", "False");
+        logged_in=false;
         return RedirectToAction("Login");
     }
 
