@@ -46,6 +46,20 @@ public class HomeController : Controller
         return RedirectToAction("Index");
     }
 
+    //Register post
+     [HttpPost]
+    public IActionResult RegisterForm(IFormCollection form){
+
+        return RedirectToAction("Login");
+    }
+
+    //Register form
+
+        public IActionResult Register()
+    {
+        return View();
+    }
+
     //Logout ling - update session, redirect to login page
     public IActionResult Logout(){
         HttpContext.Session.SetString("logged_in", "False");
