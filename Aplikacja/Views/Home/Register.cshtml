@@ -2,10 +2,10 @@
 
 <form asp-action="RegisterForm">
     <div class="form-check">
-        <input type="email" placeholder="Enter login"> 
+        <input type="login" placeholder="Enter login" asp-for="login"> 
     </div>
     <div class="form-check">
-        <input type="password" placeholder="Enter password"> 
+        <input type="password" placeholder="Enter password" asp-for="password"> 
     </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
