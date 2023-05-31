@@ -1,0 +1,9 @@
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet tool install --global dotnet-ef
+
+!Migracje!
+dotnet ef migrations add {nazwa migracji np InitialCreate}
+
+!Po migracjach do stworzenia bazy!
+dotnet ef database update
